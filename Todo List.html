@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css">
+    
+    <style>
+        body{
+            background-color: rgb(31, 29, 29);
+        }
+        .asd{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            color: aqua;
+            flex-direction: column;
+        }
+        .inp input{
+            width: 352px;
+  height: 40px;
+  border: 3px solid #acb4b9;
+  box-shadow: 2px 2px 4px black,-3px -3px 6px black;
+  border-radius: 5px;
+        }
+        .inp button{
+            cursor: pointer;
+  height: 46px;
+  width: 58px;
+  color: blue;
+  border: 2px solid #c1c1c1;
+  font-weight: 700;
+  box-shadow: 2px 2px 4px black,-3px -3px 6px black;
+  border-radius: 5px;
+        }
+        .js{
+            
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+        }
+        .js i{
+            
+            cursor: pointer;
+  box-shadow: 0 -2px 0px gray ,0 0px 0px gray,0 -2px 1px gray,0 2px 3px gray;
+  width: 42px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 17px;
+        }
+        .js ul{
+            
+  margin: 40px 0;
+ 
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  min-width: 500px;
+  
+  border-radius: 45px;
+  box-shadow: 0 -2px 0px gray ,0 0px 0px gray,0 -2px 1px gray,0 2px 3px gray;
+  background-color: #2b2626;
+        }
+    </style>
+    <title >Document</title>
+</head>
+<body>
+    <div class="asd">
+        <h1 style="font-size: 44px;">Todo List</h1>
+        <div class="inp">
+            <input id="txt" type="text">
+            <button id="txe" onclick="clicks()" >ADD</button>
+        </div>
+        <div class="js">
+
+        </div>
+    </div>
+    <script>
+        let a=document.getElementById("txt")
+        let sd=document.querySelector(".js")
+        function clicks(){
+            if(a.value==""){
+                alert("Ye Galat KR Rhe Ho")
+            }else{
+                let as =document.createElement("ul")
+                as.innerHTML=`${a.value} <i class="bi bi-trash-fill"></i>`;
+                sd.appendChild(as)
+a.value="";
+as.querySelector("i").addEventListener("click",remove)
+function remove(){
+    as.remove()
+}
+            }
+        }
+    </script>
+</body>
+</html>
